@@ -1,14 +1,10 @@
 let app = require('express')();
+var cors = require('cors')
+app.use(cors())
 let server = require('http').createServer(app);
 let io = require('socket.io')(server);
 
-var port = process.env.PORT || 8080;
 
-
-server.listen(port, function () {
-  console.log('listening in http://localhost:' + port);
-  // response.send('listening in http://localhost:' + port)
-});
 
 sendroom = '';
 users = [];
@@ -115,4 +111,11 @@ let room = 1;
 });
 
 
+var port = process.env.PORT || 3000;
+
+
+server.listen(port, function () {
+  console.log('listening in http://localhost:' + port);
+  // response.send('listening in http://localhost:' + port)
+});
 
