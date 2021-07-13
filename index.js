@@ -40,20 +40,6 @@ io.on('connection', (socket) => {
 
 
 
-//   socket.on('like-channel', () => {
-
-// let room = 1;
-
-//     socket.room = 'likes:' + room;
-
-//     // console.log(socket.room);
-
-
-//     socket.join(socket.room)
-
-//   });
-
-
 
 
 
