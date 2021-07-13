@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
 
     socket.room = 'project:' + room;
 
-    // console.log(socket.room);
+    console.log(socket.room);
 
 
     socket.join(socket.room)
@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 
     socket.room = 'private:' + room;
 
-    // console.log(socket.room);
+    console.log(socket.room);
 
 
     socket.join(socket.room)
@@ -40,18 +40,18 @@ io.on('connection', (socket) => {
 
 
 
-  socket.on('like-channel', () => {
+//   socket.on('like-channel', () => {
 
-let room = 1;
+// let room = 1;
 
-    socket.room = 'likes:' + room;
+//     socket.room = 'likes:' + room;
 
-    // console.log(socket.room);
+//     // console.log(socket.room);
 
 
-    socket.join(socket.room)
+//     socket.join(socket.room)
 
-  });
+//   });
 
 
 
@@ -81,6 +81,8 @@ let room = 1;
 
   socket.on('image', (img) => {
     socket.img = img;
+    console.log('here')
+    console.log(img)
  
   })
 
@@ -98,7 +100,7 @@ let room = 1;
 
   socket.on('send-private', (message) => {
 
-    io.to(socket.room).emit('message', { message: message.text, name: socket.username, user_id: socket.user_id,  image: socket.img.text,   created_at: new Date() });
+    io.to(socket.room).emit('message', { message: message.text, name: socket.username, user_id: socket.user_id, image: socket.img.text, created_at: new Date() });
   });
 
 
