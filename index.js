@@ -99,7 +99,7 @@ io.on('connection', (socket) => {
 });
 
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 
 server.listen(port, function () {
@@ -107,3 +107,6 @@ server.listen(port, function () {
   // response.send('listening in http://localhost:' + port)
 });
 
+
+// var socket = io('http://localhost:3000')
+// server.listen(port, () => console.log(`Listening on port ${port}`));
